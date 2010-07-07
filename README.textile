@@ -1,0 +1,67 @@
+h2. Partychat markov chains bot
+
+harper@nata2.org
+"http://nata2.org":http://nata2.org
+"@harper":http://twitter.com/harper
+
+------------
+
+h3. Background   
+
+I love markov chain bots. They are one of the most hilarious things you can have in a chat room. After years of a very comedic bot in the skinnycorp TAD chat room (bless it's now still heart) i became rather fond of having the nonsense and insanity that is a crazy bot.
+
+This is based on the same idea as all the various markov chain bots that are floating around. In a nutshell it:
+
+* receives a message
+* adds received message to the markov chain
+* stores message in the training log so that the chain builds and builds
+* if it feels like it - responds with markov chain generated message
+* sits back and is awesome
+
+Markov chains ALWAYS make things better. 
+
+The markov.py code is from the internet. I don't know where it came from. It was part of a IRC bot that I built about 4 years ago. I think it may have some roots in a blog post about markov chains. If you know - please hit me up. 
+
+h3. Markov Chain Information 
+
+You can find more info here:
+"Wikipedia: Markov Text Generators":http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators
+ 
+Note: it is used by spammers. wouldn't it be awesome to have a kid named like a spam email!
+
+h3. Plans
+
+v.01 - barely works, but works it does. hah. Needs error handling and more functionality. 
+
+h3. Prerequisites 
+
+* requires tornado (tornadoweb.org)
+
+h3. Usage
+
+Execute the markov_chat.py script:
+
+bq. harper@:~/partychat-markovchain-bot$ python markov_chat.py 
+Loading chat.log into brain.
+Brain Reloaded
+
+By default the server listens on port 8888 on 0.0.0.0. So going to http://yourip:8888 should hit the server. You will see a markov generated sentance at that url.
+
+Set up two webhooks for partychat at: http://partychat-hooks.appspot.com/
+* Post Hook with format: {{get_argument("message")}}
+* Receive Hook with the command set to * and the HTTP endpoint point at your markov_chat.py addr.
+
+
+Test it and see how it goes. 
+
+
+h3. Help make this amazing. seriously. It could be hilarious with your help.
+
+------------
+
+this is awesome. i am awesome. 
+
+hit me up. 
+"@harper":http://twitter.com/harper
+harper@nata2.org
+
