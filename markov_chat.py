@@ -15,7 +15,7 @@ webhook_url = 'http://partychat-hooks.appspot.com/post/p_zjrhnzm1'
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        chattiness = self.get_augument('chattiness',1)
+        #chattiness = self.get_augument('chattiness',1)
         names = markovchain.generate_simple_sentence()
         self.write(names)
     def post(self):
@@ -46,7 +46,6 @@ if __name__ == "__main__":
     training_file = open(training_text, 'r+')
     print "Loading "+training_text+" into brain."
     markovchain.load_brain(training_file)
-    print training_file
     print 'Brain Reloaded'
     http_server = tornado.httpserver.HTTPServer(application)
     http_server.listen(8888)
