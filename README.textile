@@ -39,6 +39,12 @@ h3. Prerequisites
 
 h3. Usage
 
+Set up two webhooks for partychat at: http://partychat-hooks.appspot.com/
+* Post Hook with format: {{get_argument("message")}}
+* Receive Hook with the command set to * and the HTTP endpoint point at your markov_chat.py addr.
+
+Edit the markov_chat.py file and set the correct posthook url 
+
 Execute the markov_chat.py script:
 
 bq. harper@:~/partychat-markovchain-bot$ python markov_chat.py 
@@ -47,12 +53,11 @@ Brain Reloaded
 
 By default the server listens on port 8888 on 0.0.0.0. So going to http://yourip:8888 should hit the server. You will see a markov generated sentance at that url.
 
-Set up two webhooks for partychat at: http://partychat-hooks.appspot.com/
-* Post Hook with format: {{get_argument("message")}}
-* Receive Hook with the command set to * and the HTTP endpoint point at your markov_chat.py addr.
-
-
 Test it and see how it goes. 
+
+h3. live example:
+
+You can play with a public live bot by chatting up markovchains@partychapp.appspotchat.com (if the server stays up ;) )
 
 
 h3. Help make this amazing. seriously. It could be hilarious with your help.
