@@ -11,7 +11,7 @@ import urllib, urllib2
 markovchain = Markov()
 command = '/markov'
 training_text = 'chat.log'
-webhook_url = 'http://partychat-hooks.appspot.com/post/p_zjrhnzm1'
+webhook_url = 'http://partychat-hooks.appspot.com/post/_YOUR_PARTYCHAT_HOOK_ID'
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
