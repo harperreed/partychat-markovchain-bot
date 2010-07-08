@@ -25,13 +25,12 @@ class MainHandler(tornado.web.RequestHandler):
         message = message_parts[1]
         if command in message:
             #chattiness = self.get_augument('chattiness',1)
-            sentence = markovchain.generate_simple_sentence()
+            sentence = markovchain.generate_sentence()
             print sentence
             values = {'message' :sentence }
             data = urllib.urlencode(values)
             req = urllib2.Request(webhook_url+"?message="+str(urllib.quote(sentence)))
             response = urllib2.urlopen(req)
-            print response
             response.close()
 
         else:

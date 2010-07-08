@@ -49,10 +49,12 @@ class Markov():
         self.w2 = self.stopword
         while sentencecount < maxsentences:
             newword = random.choice(self.markovtable[(self.w1, self.w2)])
+	    if self.w1 == "\n" and self.w2 == "\n":
+            	self.w1, self.w2 = self.w2, newword
+           	newword = random.choice(self.markovtable[(self.w1, self.w2)])
             if newword == self.stopword: return 
             if newword in self.stopsentence:
                 final_sentence = "%s%s" % (" ".join(sentence), newword)
-                print final_sentence
                 sentence = []
                 sentencecount += 1
             else:
